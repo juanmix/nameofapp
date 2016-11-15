@@ -1,0 +1,25 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+th {
+  font-family: 'Forum' cursive;
+  font-weight: 700;
+  font-size: 2em;
+  color: #333;
+}
+
+.newproduct_link {
+  font-family: 'Railway', sans-serif;
+  font-size: 2em;
+
+  text-decoration: none;
+}
+
+
+
+a:hover {
+  text-decoration: none;
+  background-color: transparent;
+
+}
