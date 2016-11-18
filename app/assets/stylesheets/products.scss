@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 th {
-  font-family: 'Forum' cursive;
+  font-family: 'Forum', cursive;
   font-weight: 700;
   font-size: 2em;
   color: #333;
@@ -12,8 +12,24 @@ th {
 .newproduct_link {
   font-family: 'Railway', sans-serif;
   font-size: 2em;
-
-  text-decoration: none;
+  color: #95283D;
+  background-color: #DF6A81;
+  border: none;
 }
 
+.newproduct_link:hover {
+  background-color: #450310;
+  color: #DF6A81;
+}
 
+.products p {
+  margin: 10px 2px;
+}
+
+.product-title {
+  height: 66px;
+}
+
+.description {
+  height: 36px;
+}
