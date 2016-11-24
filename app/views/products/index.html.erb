@@ -9,15 +9,12 @@
     <!--The loop @products.each do |product| iterates over that array.-->
     <!-- During each iteration, the current element of the array (aka each product object in the table) is represented by the variable product. -->
     <!-- That's why you can access each object's properties with product.name or product.description and so on-->
+
     <% @products.each do |product| %>
-      <div class="col-md-3 col-sm-4">
-        <h2 class="product-title"><%= product.name %></h2>
-        <p class="description"><%= product.description %></p>
-        <%= image_tag(product.image_url, class: "img-responsive") %>
-        <p><%= product.price %>€</p>
-        <p><%= product.colour %></p>
-        <p product-links><%= link_to 'Show', product %>  <%= link_to 'Edit', edit_product_path(product) %>  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div> <!-- end col -->
+      <%= render partial: "product", locals: {product: product} %><!-- a partial is referenced, "product", from _product.html.erb -->
+      <!--% render product %>-->
+      <!--%= render partial: "product", collection: @products %> -->
+      <!--%= render @products %>-->
     <% end %>
   </div> <!-- end row -->
 </div> <!-- end container -->

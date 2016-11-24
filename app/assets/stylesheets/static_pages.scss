@@ -12,7 +12,7 @@ body {
   background: linear-gradient(#719BA9, #82C594); /* Standard syntax (must be last) */
 }
 
-
+// nav bar
 .navbar-inverse {
   background-color: #5FB175;
   border: none;
@@ -23,6 +23,8 @@ body {
   font-size: 2em;
 }
 
+
+//end nav bar
 
 h1 {
   font-family: 'Raleway', sans-serif;
@@ -57,4 +59,20 @@ section {
 .mainimg {
   margin-left: auto;
   margin-right: auto;
+}
+
+// carousel
+
+.carousel-caption {
+  color: #719BA9;
+  text-shadow: none;
+  font-size: 1.5em;
+}
+
+.carousel-indicators li {
+  background-color: blue;
+}
+
+.carousel-indicators .active {
+  background-color: red;
 }
