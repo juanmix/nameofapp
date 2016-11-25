@@ -1,5 +1,5 @@
 <h1>New Product</h1>
 
-<%= render 'form', product: @product %>
+<%= render 'form', product: @product %> <!-- product: @product tells the rails form helper (render 'form') that you want to create a form for the product model, and store the user input inside the @product variable, that is accesible from the controller. -->
 
 <%= link_to 'Back', products_path %>
