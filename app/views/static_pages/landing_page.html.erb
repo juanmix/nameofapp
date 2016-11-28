@@ -4,8 +4,12 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @products.each do |product| %>
-    <li data-target="#carousel-example-generic" data-slide-to="<% @products.each_with_index do |product, index| %><% end %>" class="active"></li>
+    <% @products.each_with_index do |product, index| %>  <!-- |product|: variable inside ||, the name could be
+     anything else, this var represents the current object being looped. First iteration of loop the var 'product'
+      will be the first product. Now if you want to have access to this variable's index in your loop as well,
+      then you do the loop with index instead of the regular loop you are using.-->
+    <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="active"></li> <!-- Now you
+     have access to a variable called index inside your loop.-->
 
     <% end %>
   </ol>
