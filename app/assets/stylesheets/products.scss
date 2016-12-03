@@ -11,15 +11,15 @@ th {
 
 // button
 
-.newproduct_link {
+.newproduct-btn {
   font-family: 'Railway', sans-serif;
   font-size: 2em;
-  color: #95283D;
+  color: #f9d9df;
   background-color: #DF6A81;
   border: none;
 }
 
-.newproduct_link:hover {
+.newproduct-btn:hover {
   background-color: #450310;
   color: #DF6A81;
 }
@@ -34,4 +34,32 @@ th {
 
 .description {
   height: 36px;
+}
+
+// product form
+
+.edit_product {
+  margin: 40px 40px 30px 50px;
+}
+
+.actions {
+  margin-top: 15px;
+}
+
+.update-btn {
+  font-family: 'Railway', sans-serif;
+  font-size: 1.5em;
+  color: #95283D;
+  background-color: #F297A9;
+  border: none;
+}
+
+.update-btn:hover {
+  background-color: #F8C2CD;
+  color: #DF6A81;
+}
+
+.show-back {
+  margin-left: 60px;
+  font-size: 1.5em;
 }

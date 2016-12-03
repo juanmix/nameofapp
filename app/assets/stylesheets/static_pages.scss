@@ -15,12 +15,29 @@ body {
 // nav bar
 .navbar-inverse {
   background-color: #5FB175;
-  border: none;
+  border-color: #ff6400;
+  border-width: 8px;
+  border-radius: 18px;
 }
 
 .navbar-inverse .navbar-nav>li>a {
   color: #396F81;
   font-size: 2em;
+}
+
+.search-label {
+  position: relative;
+  top: 5px;
+  padding-left: 3px;
+  letter-spacing: 4px;
+  color: #d8f5ff;
+}
+
+.search-button {
+  position: relative;
+  bottom: 5px;
+  background-color: #1ad24c;
+  color: #d8f5ff;
 }
 
 
