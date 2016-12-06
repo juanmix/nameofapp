@@ -6,7 +6,19 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]  #to access our search term
-      @products = Product.where("name LIKE ?", "%#{search_term}%")
+
+      if Rails.env.development?
+
+        # SQL matching operator 'LIKE' to include wildcard character to indicate that matching
+        # term may be part of a longer string.'%' around seatch_term string. '#' substitution method.
+        @products = Product.where("name LIKE ?", "%#{search_term}%")
+
+      else
+
+        @products = Product.where("name ilike ?", "%#{search_term}%")
+      end
+
+
     else
       @products = Product.all
     end
