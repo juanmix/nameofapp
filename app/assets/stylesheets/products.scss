@@ -64,10 +64,15 @@ th {
   font-size: 1.5em;
 }
 
-.field {
+.field, label {
+  font-family: 'Railway', sans-serif;
+  font-size: 1.1em;
   color: #bd1e4b;
+  letter-spacing: 3px;
 }
 
 .field input, textarea {
+  font-family: 'Forum', cursive;
+  font-size: 1.2em;
   color: #396f81;
 }
