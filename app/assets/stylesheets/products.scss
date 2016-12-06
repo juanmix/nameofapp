@@ -38,7 +38,7 @@ th {
 
 // product form
 
-.edit_product {
+.edit_product, .new_product {
   margin: 40px 40px 30px 50px;
 }
 
@@ -69,9 +69,5 @@ th {
 }
 
 .field input, textarea {
-  color: blue;
-}
-
-.form-label {
   color: #396f81;
 }
