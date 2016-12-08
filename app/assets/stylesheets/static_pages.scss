@@ -105,13 +105,28 @@ section {
   margin-left: auto;
 }
 
-// static contact
+// static_page contact
 
-.map {
-  margin-right: auto;
-  margin-left: auto;
-  width: 50%;
+@media (min-width: 992px) {
+  .map {
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+  }
 }
+
+.form-control {
+  font-family: 'Forum', cursive;
+  font-size: 1.3em;
+}
+
+.text-area {
+  height: 110px;
+  width: 100%;
+  color: #555;
+  font-size: 1.4em;
+}
+
 
 // thank you
 
