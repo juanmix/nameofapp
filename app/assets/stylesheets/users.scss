@@ -1,0 +1,30 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.new_user {
+  max-width: 330px;
+  margin: 5% auto;
+}
+
+.log-heading {
+  margin-bottom: 15px;
+}
+
+.checkbox {
+  margin-left: 20px;
+}
+
+.checkbox-label {
+  display: inline-block;
+
+}
+
+#user_remember_me {
+  position: relative;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+
+}
