@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy] # inserted during...
-  #..scaffolding. 'callback' method. 'before_action' is a filter. before any...
+  before_action :set_user, only: [:show, :edit, :update, :destroy] # inserted during..
+  #..scaffolding. 'callback' method. 'before_action' is a filter. before any..
   #..action is run, call the method 'set_user'. the next parameter means that..
   #..it should only be run for the actions inside that array: show, edit, etc.
   # this callback is here for DRY; each action requieres that user object,..
@@ -86,6 +86,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 end
