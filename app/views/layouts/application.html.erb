@@ -30,7 +30,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        </div>
+
+
+        <div class="projectName navbar-brand">
+            <%= link_to 'Juan Bikes', root_path %>
+          </div> <!--end projectName -->
+        </div> <!--end navbar header -->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,8 +46,16 @@
             <li><%= link_to 'bikes', products_path %></li>
           </ul>
 
-          <ul class="nav pull-right">
+          <ul class="nav navbar-nav login-nav pull-right">
             <li>
+              <%= form_tag("/products", method: "get", class: "navbar-right search-bar") do %>
+                <!-- label_tag(:q, "Search for:", class: "search-label") %>-->
+                <%= text_field_tag(:q, nil, placeholder: 'looking for...', class: 'search-input') %> <!-- the name atribute of the text field is 'q',
+                this will also be the name of the parameter that gets passed to the index action as our term-->
+                <%= submit_tag("Search", class: "btn search-button") %>
+              <% end %>
+            </li>
+            <li class="login-nav">
             <% if user_signed_in? %>  <!-- user_signed_in? helper that devise provides. returns
                                         true if someone is signed in-->
               <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> <!-- the action
@@ -54,27 +67,20 @@
             </li>
           </ul>
 
-          <!--form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>-->
-          <%= form_tag("/products", method: "get", class: "navbar-right search-bar") do %>
-            <!-- label_tag(:q, "Search for:", class: "search-label") %>-->
-            <%= text_field_tag(:q) %> <!-- the name atribute of the text field is 'q',
-            this will also be the name of the parameter that gets passed to the index action as our term-->
-            <%= submit_tag("Search", class: "btn search-button") %>
-          <% end %>
+
+
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
     <!-- This block will display a welcome message when you sign in. -->
-    <p class="notice"><%= notice %></p>
-
-    <p class="alert"><%= alert %></p>
-
+    <!-- conditional statement, displays notice/alert tag only if the Ruby var 'notice' exists-->
+    <% if notice %>
+      <p id="notice" class="alert alert-info" role="alert"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger" role="alert"><%= alert %></p>
+    <% end %>
 
 <%= yield %>  <!--embedded ruby part, inserts contents of each page (view files) of my app into the site layout  -->
 

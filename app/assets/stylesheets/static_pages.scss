@@ -13,6 +13,33 @@ body {
 }
 
 // nav bar
+
+.navbar-brand {
+  font-size: 2.1em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+}
+
+.navbar-brand a {
+  color: #ff6400;
+}
+
+.navbar-nav {
+  margin: 0 0 0 40px;
+}
+
+.nav>li>a:hover {
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
 .navbar-inverse {
   background-color: #5FB175;
   border-color: #ff6400;
@@ -27,12 +54,27 @@ body {
   font-weight: 700;
 }
 
-.search-label {
-  position: relative;
-  top: 8px;
-  padding-left: 3px;
-  letter-spacing: 4px;
-  color: #d8f5ff;
+.login-nav {
+  font-size: 1em;
+  font-weight: 300;
+  left: 10px;
+}
+
+.login-nav>li>a {
+  font-size: 1.5em !important;
+  font-weight: 300 !important;
+  color: #acf7ff !important;
+
+}
+
+.search-input {
+  background-color: #ebfdff;
+  color: #555;
+  font-family: 'Forum', cursive;
+  font-size: 1.3em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 32px;
 }
 
 .search-bar {
@@ -46,8 +88,9 @@ body {
   bottom: 2px;
   width: 74px;
   height: 34px;
-  background-color: #1ad24c;
-  color: #d8f5ff;
+  background-color: #00c7ff;
+  color: #acf7ff;
+  font-size: 15px;
 }
 
 .pull-right {
@@ -145,4 +188,11 @@ section {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
+}
+
+.contact-form {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 330px;
+
 }

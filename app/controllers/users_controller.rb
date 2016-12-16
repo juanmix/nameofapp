@@ -1,5 +1,20 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy] # inserted during...
+  #..scaffolding. 'callback' method. 'before_action' is a filter. before any...
+  #..action is run, call the method 'set_user'. the next parameter means that..
+  #..it should only be run for the actions inside that array: show, edit, etc.
+  # this callback is here for DRY; each action requieres that user object,..
+  #..using a callback prevents us from having to repeat this Active Record query..
+  #..inside multiple methods.
+
+  before_action :authenticate_user!, :except => [:show, :index] # restrict access
+  #...if not logged in. 'except:' is an exception created for 'index' action.
+  # so people can see all the users of your app without logging in.
+
+  load_and_authorize_resource # cancancan helper method. will find user, set the @user...
+  #..variable, and check their abilities to make sure they're authorized...
+  #..to perform that action (ability to perform read, create, update...).
+
 
   # GET /users
   # GET /users.json
@@ -63,6 +78,8 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # this method takes the ID parameter and fetches a user record fro that DB, and..
+    #..sets the @user variable.
     def set_user
       @user = User.find(params[:id])
     end
