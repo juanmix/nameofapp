@@ -46,6 +46,7 @@
             <li><%= link_to 'bikes', products_path %></li>
           </ul>
 
+          <!-- search bar -->
           <ul class="nav navbar-nav login-nav pull-right">
             <li>
               <%= form_tag("/products", method: "get", class: "navbar-right search-bar") do %>
@@ -55,6 +56,7 @@
                 <%= submit_tag("Search", class: "btn search-button") %>
               <% end %>
             </li>
+            <!-- login - logout button -->
             <li class="login-nav">
             <% if user_signed_in? %>  <!-- user_signed_in? helper that devise provides. returns
                                         true if someone is signed in-->
