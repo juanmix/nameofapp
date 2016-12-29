@@ -10,5 +10,10 @@ class Product < ApplicationRecord
   def lowest_rating_comment
     comments.rating_asc.first
   end
+
+  def average_rating
+    comments.average(:rating).to_f
+  end
+
   # validate :name, presence: true  # throws error message if product is blank..? activeRecord validations
 end

@@ -13,23 +13,27 @@
       <h3><%= @product.price %><span class="glyphicon glyphicon-euro" aria-hidden="true"></span> |
       <%= @product.colour %> </h3>
 
-      <div class="row comments">
-        <p><%= @product.highest_rating_comment %></p>
+      <div class="comments">
+        <h3>Buyers say: </h3>
+        <p>"<%= @product.highest_rating_comment.body %>"</p>
+        <h3>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </h3>
       </div>
     </div> <!-- end column 1 -->
 
-      <div class="col-xs-12 col-sm-6 thumbnail center">
-        <%= image_tag(@product.image_url, class: "img-responsive") %>
-      </div> <!-- end column 2 -->
+
+    <div class="col-xs-12 col-sm-6 thumbnail center">
+      <%= image_tag(@product.image_url, class: "img-responsive") %>
+    </div> <!-- end column 2 -->
 
   </div> <!-- end row -->
 
-  <div class="center">
+  <div class="show-back center">
     <%= link_to 'Edit', edit_product_path(@product) %> |
     <%= link_to 'Back', products_path %>
   </div>
 
-
+  <%= render 'new_comment', comment: @comment %>
+  <%= render 'comments', comment: @comment %>
 
 
 </div> <!-- container -->

@@ -2,7 +2,7 @@
 
 <%= render 'form', product: @product %> <!-- product: @product tells the rails form helper (render 'form') that you want to create a form for the product model, and store the user input inside the @product variable, that is accesible from the controller. -->
 
-<div class="show-back">
+<div class="show-back center">
   <%= link_to 'Show', @product %> |
   <%= link_to 'Back', products_path %>
 </div>

@@ -1,0 +1,18 @@
+<!-- form to submit a product review-->
+
+<% if signed_in? %>
+  <h3>Add a review:</h3>
+  <%= form_for([@product, @product.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.label :body, "Comments" %>
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <div class="rating"></div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Submit", class: "btn submit-btn" %>
+    </div>
+  <% end %>
+<% end %>

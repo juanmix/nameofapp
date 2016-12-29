@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout'}
-  resources :users
+
   get 'static_pages/about'
 
   get 'static_pages/contact'
@@ -24,8 +24,12 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :products
+  resources :products do
+    resources :comments
+  end
+  resources :users
   resources :orders, only: [:index, :show, :create, :destroy] # you can also use ' except: [:edit, :update, :new] '
+
 
   # Example resource route with options:
   #   resources :products do
