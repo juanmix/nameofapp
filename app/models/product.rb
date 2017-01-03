@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   has_many :orders
   has_many :comments
+  # validation to the Product model that requires all new products to have a name provided
+  validates :name, presence: true
 
   # return the comments with the highest rating, descending, select first comment of that list.
   def highest_rating_comment
@@ -15,5 +17,6 @@ class Product < ApplicationRecord
     comments.average(:rating).to_f
   end
 
-  # validate :name, presence: true  # throws error message if product is blank..? activeRecord validations
+  self.per_page = 3
+
 end

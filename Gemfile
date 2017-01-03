@@ -56,3 +56,6 @@ gem 'devise'
 
 # for authorization
 gem 'cancancan', '~> 1.10'
+
+# for pagination, of comments, products... show just a certain amount per page.
+gem 'will_paginate', '~> 3.1.0'

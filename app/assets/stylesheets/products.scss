@@ -83,6 +83,19 @@ th {
 
 //show product
 
+h4 {
+  color: #ebfdff;
+}
+
+h4 > .rated {
+  margin-top: 10px;
+}
+
+.buyer-comment {
+  font-size: 2em;
+  font-style: italic;
+}
+
 .center {
   margin-left: auto;
   margin-right: auto;

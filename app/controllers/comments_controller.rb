@@ -7,8 +7,18 @@ class CommentsController < ApplicationController
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params) # returns comment body and rating.
     @comment.user = current_user
-    @comment.save
-    redirect_to product_path(@product)
+    # Since we didn’t create the comments controller or views with scaffolding, we..
+    #..need to add the validation logic in manually. we just need to include the logic..
+    #..into the controller action which will reload the page if the data is invalid:
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @product, notice: 'Review was created succesfully.' }
+        format.json { render :show, status: :created, location: @product }
+      else
+        format.html { redirect_to @product, alert: 'Review was not saved succesfully.' }
+        format.json { render json: @comment.errors, status: unprocessable_entity }
+      end
+    end
   end
 
   def destroy

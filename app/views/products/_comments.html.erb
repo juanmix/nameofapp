@@ -2,6 +2,7 @@
     <% @comments.each do |comment| %>
         <div class="row">
             <hr>
+            <!-- Rails helper 'time_ago_in_words' , timestamp to show when comment was created-->
             <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
             <!-- star rating to display, instead of integer value. initialized in site.js-->
             <div class="rated" data-score="<%= comment.rating %>"></div>
