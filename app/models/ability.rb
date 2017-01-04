@@ -3,8 +3,23 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    can :manage, User, id: user.id # the current, initialized user can manage itself
+
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
   end
+
+  #def initialize(user)
+    #if user.nil?
+      #can :read, :all
+    #elsif user.admin?
+      #can :manage, all
+    #else
+      #can :read, :all
+      #can [:update, :destroy, :create], Comment :user_id => user.id
+    #end
+  #end
 
 end
 
