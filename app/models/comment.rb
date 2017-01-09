@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :product
-
+  # validation to the comment model that requires all new comments to have these provided:
   # every comment record should be saved with a user ID, a product ID and a message.
   # note that for the product and user relations, we validate the relation, not the..
   #..name of the database field, so we use the :user symbol instead of :user_id
