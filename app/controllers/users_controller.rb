@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   #..using a callback prevents us from having to repeat this Active Record query..
   #..inside multiple methods.
 
-  before_action :authenticate_user!, :except => [:show, :index] # restrict access
+  before_action :authenticate_user! # restrict access
   #...if not logged in. 'except:' is an exception created for 'index' action.
   # so people can see all the users of your app without logging in.
 

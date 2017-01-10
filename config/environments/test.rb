@@ -13,8 +13,13 @@ Rails.application.configure do
   config.eager_load = false
 
   # Configure static file server for tests with Cache-Control for performance.
-  config.serve_static_files   = true
-  config.static_cache_control = 'public, max-age=3600'
+
+  # I erased these 2 following lines after getting a deprecation message in console, added the next 2.
+  #config.serve_static_files   = true
+  #config.static_cache_control = 'public, max-age=3600'
+
+  config.public_file_server.enabled = true
+  config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=3600' }
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

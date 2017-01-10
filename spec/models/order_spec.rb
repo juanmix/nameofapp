@@ -1,5 +1,5 @@
-requiere 'rails_helper'
+require 'rails_helper'
 
-dsecribe Order do
+describe Order do
 
 end
