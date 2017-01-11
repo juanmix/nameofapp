@@ -2,9 +2,10 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
 
-    let(:user1) { User.create!(email: 'juan@example.com', password: '123456') }
-    let(:user2) { User.create!(email: "pedro@example.com", password: "password") }
-
+    let(:user1) { FactoryGirl.create(:user) }
+    let(:user2) { FactoryGirl.create(:user) }
+    # Now @user will be generated from the factory :user
+    # before: User.create!(email: "pedro@example.com", password: "password")
 
   describe 'GET #show' do
 
