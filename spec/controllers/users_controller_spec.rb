@@ -31,7 +31,7 @@ describe UsersController, type: :controller do
     context 'No user is logged in' do
       it 'redirects to login' do # this time we don't add the before block with sign_in user1
         get :show, id: user1.id  # a show page always needs an ID so we know which show page to access
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(new_user_session_path) # asks user to login, new_user_session.
       end
     end
 

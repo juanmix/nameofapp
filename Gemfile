@@ -66,3 +66,6 @@ gem 'will_paginate', '~> 3.1.0'
 
 # to test controllers
 gem 'rails-controller-testing'
+
+# stripe, for online payments
+gem 'stripe'

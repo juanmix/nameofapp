@@ -21,6 +21,10 @@
           <% end %>
           <h4>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </h4>
       </div>
+
+      <%= form_tag "/payments/create" do %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+      <% end %>
     </div> <!-- end column 1 -->
 
 
@@ -29,6 +33,8 @@
     </div> <!-- end column 2 -->
 
   </div> <!-- end row -->
+
+
 
   <div class="show-back center">
     <%= link_to 'Edit', edit_product_path(@product) %> |
