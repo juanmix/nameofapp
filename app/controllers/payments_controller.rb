@@ -22,7 +22,7 @@ class PaymentsController < ApplicationController
         Order.create(
           product_id: @product.id,
           user_id: @user_id,
-          total: @number_to_currency(@product.price)
+          total: number_to_currency(@product.price)
           )
       end
 
