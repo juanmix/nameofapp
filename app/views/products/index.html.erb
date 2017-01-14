@@ -11,8 +11,8 @@
     <!-- That's why you can access each object's properties with product.name or product.description and so on-->
 
     <% @products.each do |product| %>
-      <%= render partial: "product", locals: {product: product} %><!-- a partial is referenced, "product", from _product.html.erb -->
-      <!--% render product %>-->
+      <!--%= render partial: "product", locals: {product: product} %--><!-- a partial is referenced, "product", from _product.html.erb -->
+      <%= render product %>
       <!--%= render partial: "product", collection: @products %> -->
       <!--%= render @products %>-->
     <% end %>

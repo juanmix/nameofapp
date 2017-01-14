@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <div class="container">
@@ -11,7 +12,7 @@
       <h3><%= @product.description %></h3>
       <h3>Color: <%= @product.colour %> </h3>
 
-      <h3><%= @product.price %><span class="glyphicon glyphicon-euro" aria-hidden="true"></span></h3>
+      <h3><%= number_to_currency(@product.price) %><span class="glyphicon glyphicon-euro" aria-hidden="true"></span></h3>
 
 
       <div class="comments">
@@ -21,10 +22,12 @@
           <% end %>
           <h4>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </h4>
       </div>
-
       <%= form_tag "/payments/create" do %>
         <%= render partial: "shared/stripe_checkout_button" %>
+        <!-- value=@product.id. this way it will be accessible in the parameters and you can access the product in the payments controller. button creates this product's order. -->
+        <%= hidden_field_tag(:product_id, @product.id) %>
       <% end %>
+
     </div> <!-- end column 1 -->
 
 
