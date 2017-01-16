@@ -3,7 +3,7 @@
   <h2 class="product-title"><%= product.name %></h2>
   <p class="description"><%= product.description %></p>
   <%= image_tag(product.image_url, class: "img-responsive") %>
-  <p><%= product.price %>€</p>
+  <p><%= number_to_currency(product.price) %>€</p>
   <p><%= product.colour %></p>
   <p product-links><%= link_to 'Show', product %>  <%= link_to 'Edit', edit_product_path(product) %>  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div> <!-- end col -->
