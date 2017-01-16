@@ -37,7 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl_rails', '~>4.0'
+  gem 'factory_girl_rails', '~>4.0' # testing framework for rails that encourages behaviour driven dev.
 end
 
 group :development do
@@ -46,8 +46,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  # testing framework for rails that encourages behaviour driven dev.
-  gem 'rspec-rails', '~> 3.5'
 end
 
 # pg  gem, for app to query / communicate with PostgreSQL databases. wont be installed locally, since its for prodction env.

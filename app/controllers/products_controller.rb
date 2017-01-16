@@ -23,6 +23,8 @@ class ProductsController < ApplicationController
 
     else
       @products = Product.all.paginate(page: params[:page], per_page: 12)
+      logger.debug "there are #{@products.count} bikes in this page"
+
     end
   end
 
