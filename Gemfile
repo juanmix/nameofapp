@@ -67,3 +67,6 @@ gem 'rails-controller-testing'
 
 # stripe, for online payments
 gem 'stripe'
+
+# brakeman security
+gem "brakeman", :require => false

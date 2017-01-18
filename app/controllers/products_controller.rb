@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
       if Rails.env.development?
 
         # SQL matching operator 'LIKE' to include wildcard character to indicate that matching
-        # term may be part of a longer string.'%' around seatch_term string. '#' substitution method.
+        # term may be part of a longer string.'%' around search_term string. '#' substitution method.
         @products = Product.where("name LIKE ?", "%#{search_term}%")
 
       else
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
 
 
     else
-      @products = Product.all.paginate(page: params[:page], per_page: 12)
+      @products = Product.all.paginate(page: params[:page], per_page: 8)
       logger.debug "there are #{@products.count} bikes in this page"
 
     end
