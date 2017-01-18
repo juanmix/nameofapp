@@ -11,4 +11,12 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
+  // elevate zoom plugin, to zoom into images.
+  $('.img-zoom').elevateZoom({
+    zoomType : "lens",
+    lensShape : "round",
+    lensSize : 300,
+    scrollZoom : true
+  });
+
 });
