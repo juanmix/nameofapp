@@ -19,7 +19,8 @@
           <h4>Buyers say: </h4>
             <p class="buyer-comment">"<%= @product.highest_rating_comment.body %>"</p>
           <% end %>
-          <h4>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </h4>
+          <h4>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+          </h4>
       </div>
       <%= form_tag "/payments/create" do %>
         <%= render partial: "shared/stripe_checkout_button" %>

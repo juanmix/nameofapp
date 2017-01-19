@@ -2,7 +2,9 @@
 
 <% if signed_in? %>
   <h3>Add a review:</h3>
-  <%= form_for([@product, @product.comments.build]) do |f| %>
+  <!--AJAX!!'remote: true', to save a comment to the DB without reloading page -->
+  <!--Now the form will be submitted by Ajax rather than by the browser's normal submit mechanism.-->
+  <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
     <div class="field">
       <%= f.label :body, "Comments" %>
       <%= f.text_area :body, class: "form-control" %>

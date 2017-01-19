@@ -14,10 +14,11 @@ class ProductsController < ApplicationController
         # SQL matching operator 'LIKE' to include wildcard character to indicate that matching
         # term may be part of a longer string.'%' around search_term string. '#' substitution method.
         @products = Product.where("name LIKE ?", "%#{search_term}%")
-
+        @products = @products.paginate(page: params[:page], per_page: 8)
       else
 
         @products = Product.where("name ilike ?", "%#{search_term}%")
+        @products = @products.paginate(page: params[:page], per_page: 8)
       end
 
 

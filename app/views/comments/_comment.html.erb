@@ -1,0 +1,28 @@
+<%= comment.body %>
+
+<div class="product-reviews">
+
+        <div class="row">
+            <hr>
+            <!-- Rails helper 'time_ago_in_words' , timestamp to show when comment was created-->
+            <h4><%= comment.user.first_name %> <small><em>
+            <%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
+            <!--show destroy link only if used is admin and signed in-->
+            <% if signed_in? && current_user.admin? %>
+              <!--to link to this nested resource in Rails use the full path name.
+              Nested resource links require both resources so you need to pass it the product variable and
+              the comment variable.
+              Use the html_safe method on that string (span) to ensure that it gets displayed as HTML
+              instead of plain text -->
+              <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe,
+              product_comment_path(comment.product, comment), method: :delete,
+              data: { confirm: 'Are you sure?' } %></h4>
+            <% end %>
+
+            <!-- star rating to display, instead of integer value. initialized in site.js-->
+            <div class="rated" data-score="<%= comment.rating %>"></div>
+            <!--<p><%= "Rating: #{comment.rating}/5" %></p>-->
+            <p>"<%= comment.body %>"</p>
+        </div>
+
+</div>
