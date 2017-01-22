@@ -1,8 +1,8 @@
 //AJAX stuff. from 'create' action in comments controller. here we have a new_comment mssage, prepend
 //a new review from a product before the other commments. average rating from raty stars ratings
 
-$("#new_comment").html("thank you for reviewing :D"); //show message confirming comment is ok.
+$("#new_comment").html("thanks for your thoughts! :D"); //show message confirming comment is ok.
 //The 'j' method call is used to escape the Ruby code inside our JavaScript. Because we named the partial
 // _comment.html.erb inside our views/comments folder, we can just use Rails' short form @comment.
-$(".product-reviews").prepend("<% j render @comment %>");
+$(".product-reviews").prepend("<%= j render @comment %>");
 $("#average-rating").attr("data-score", "<%= @product.average_rating %>");
