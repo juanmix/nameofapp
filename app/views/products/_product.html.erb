@@ -1,11 +1,14 @@
 <!-- different products shown in product index page -->
-<div class="col-md-3 col-sm-4">
-  <h2 class="product-title"><%= product.name %></h2>
-  <p class="description"><%= product.description %></p>
-  <%= image_tag(product.image_url, class: "img-responsive") %>
-  <p><%= number_to_currency(product.price) %>€</p>
-  <p><%= product.colour %></p>
+<% cache product do %>
+  <div class="col-md-3 col-sm-4">
+    <h2 class="product-title"><%= product.name %></h2>
+    <p class="description"><%= product.description %></p>
+    <%= image_tag(product.image_url, class: "img-responsive") %>
+    <p><%= number_to_currency(product.price) %>€</p>
+    <p><%= product.colour %></p>
 
-  <p product-links><%= link_to 'Show', product %>  <%= link_to 'Edit', edit_product_path(product) %>  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-</div> <!-- end col -->
+    <p product-links><%= link_to 'Show', product %>  <%= link_to 'Edit', edit_product_path(product) %>  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div> <!-- end col -->
+<% end %>
+
 <% logger.debug "Product name: #{product.name}" %>

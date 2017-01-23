@@ -2,6 +2,8 @@
 
 <div class="container">
 
+  <% cache @product do %>
+
   <div class="row">
     <h1><%= @product.name %></h1>
   </div>
@@ -12,7 +14,6 @@
       <h3>Color: <%= @product.colour %> </h3>
 
       <h3><%= number_to_currency(@product.price) %><span class="glyphicon glyphicon-euro" aria-hidden="true"></span></h3>
-
 
       <div class="comments">
         <% if @product.highest_rating_comment %>
@@ -37,6 +38,7 @@
 
   </div> <!-- end row -->
 
+  <% end %>
 
 
   <div class="show-back center">

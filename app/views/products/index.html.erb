@@ -12,7 +12,9 @@
 
     <% @products.each do |product| %>
       <!--%= render partial: "product", locals: {product: product} %--><!-- a partial is referenced, "product", from _product.html.erb -->
-      <%= render product %>
+      <% cache(cache_key_for_products) do %>
+        <%= render product %>
+      <% end %>
       <!--%= render partial: "product", collection: @products %> -->
       <!--%= render @products %>-->
     <% end %>

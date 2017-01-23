@@ -70,3 +70,8 @@ gem 'stripe'
 
 # brakeman security
 gem "brakeman", :require => false
+
+# gem for MemCachier to work. in-memory key/value store used for caching data. It is a key technology in
+# modern web applications for scaling and reducing server loads. The MemCachier add-on manages and scales
+# clusters of memcache servers so you can focus on your app.
+gem 'dalli'
