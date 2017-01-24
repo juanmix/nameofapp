@@ -75,3 +75,9 @@ gem "brakeman", :require => false
 # modern web applications for scaling and reducing server loads. The MemCachier add-on manages and scales
 # clusters of memcache servers so you can focus on your app.
 gem 'dalli'
+
+# redis provides a full set of stores (cache, session, http cache) for Rails.
+gem 'redis-rails'
+
+# new relic : New Relic measures every detail you need to know about your application's performance, from overall request time, to tracking slow SQL queries, to error and downtime alerts.
+gem 'newrelic_rpm'

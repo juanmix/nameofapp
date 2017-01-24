@@ -10,14 +10,14 @@
     <!-- During each iteration, the current element of the array (aka each product object in the table) is represented by the variable product. -->
     <!-- That's why you can access each object's properties with product.name or product.description and so on-->
 
-    <% @products.each do |product| %>
+
       <!--%= render partial: "product", locals: {product: product} %--><!-- a partial is referenced, "product", from _product.html.erb -->
       <% cache(cache_key_for_products) do %>
-        <%= render product %>
+        <%= render @products %>
       <% end %>
       <!--%= render partial: "product", collection: @products %> -->
       <!--%= render @products %>-->
-    <% end %>
+
   </div> <!-- end row -->
 
   <div class="row">
