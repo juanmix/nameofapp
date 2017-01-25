@@ -9,6 +9,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
+require "action_cable"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -34,3 +35,5 @@ module Nameofapp
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
   end
 end
+
+ActiveSupport.halt_callback_chains_on_return_false = false

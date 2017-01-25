@@ -12,6 +12,7 @@
 
 
       <!--%= render partial: "product", locals: {product: product} %--><!-- a partial is referenced, "product", from _product.html.erb -->
+      <!-- russian doll caching. the _product partial is also cached...? custom helper checks amount of products and whether one has been updated. /helpers/products_helper.rb -->
       <% cache(cache_key_for_products) do %>
         <%= render @products %>
       <% end %>

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   resources :users
   resources :orders, only: [:index, :show, :create, :destroy] # you can also use ' except: [:edit, :update, :new] '
 
-
+  mount ActionCable.server => '/cable'
   # Example resource route with options:
   #   resources :products do
   #     member do

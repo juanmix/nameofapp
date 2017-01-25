@@ -12,6 +12,8 @@ class CommentsController < ApplicationController
     #..into the controller action which will reload the page if the data is invalid:
     respond_to do |format|
       if @comment.save
+        # added here to make sure the comment is only broadcasted if the comment passes all validations and is actually saved in the database:
+        ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
         format.html { redirect_to @product, notice: 'Review was created succesfully.' }
         format.json { render :show, status: :created, location: @product }
         format.js # AJAX, to render comment without reloading page.
