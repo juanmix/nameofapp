@@ -7,13 +7,17 @@ class CommentsController < ApplicationController
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params) # returns comment body and rating.
     @comment.user = current_user
+    @user = current_user
     # Since we didn’t create the comments controller or views with scaffolding, we..
     #..need to add the validation logic in manually. we just need to include the logic..
     #..into the controller action which will reload the page if the data is invalid:
     respond_to do |format|
       if @comment.save
         # added here to make sure the comment is only broadcasted if the comment passes all validations and is actually saved in the database:
-        ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
+        # ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
+        # previous line no longer used, Rails offers another method for broadcasting to specific model's channels.
+        #ProductChannel.broadcast_to @product.id, comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user}), average_rating: @product.average_rating
+        #previous line also no longer used, moved to comment_update_job.rb
         format.html { redirect_to @product, notice: 'Review was created succesfully.' }
         format.json { render :show, status: :created, location: @product }
         format.js # AJAX, to render comment without reloading page.

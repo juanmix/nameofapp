@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   has_many :comments
   # validation to the Product model that requires all new products to have a name provided
   validates :name, presence: true
+  validates :price, presence: true
+  validates :image_url, presence: true
 
   # return the comments with the highest rating, descending, select first comment of that list.
   def highest_rating_comment

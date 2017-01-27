@@ -4,5 +4,5 @@
 $("#new_comment").html("thanks for your thoughts! :D"); //show message confirming comment is ok.
 //The 'j' method call is used to escape the Ruby code inside our JavaScript. Because we named the partial
 // _comment.html.erb inside our views/comments folder, we can just use Rails' short form @comment.
-$(".product-reviews").prepend("<%= j render @comment %>");
+
 $("#average-rating").attr("data-score", "<%= @product.average_rating %>");

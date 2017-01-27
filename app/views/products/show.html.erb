@@ -4,11 +4,11 @@
 
   <% cache @product do %>
 
-  <div class="row">
+  <div class="row" data-product-id="<%= @product.id %>">
     <h1><%= @product.name %></h1>
   </div>
 
-  <div class="row productshow">
+  <div class="row productshow" data-product-id="<%= @product.id %>">
     <div class="col-xs-12 col-sm-6">
       <h3><%= @product.description %></h3>
       <h3>Color: <%= @product.colour %> </h3>
@@ -25,7 +25,7 @@
       </div>
       <%= form_tag "/payments/create" do %>
         <%= render partial: "shared/stripe_checkout_button" %>
-        <!-- value=@product.id. this way it will be accessible in the parameters and you can access the product in the payments controller. button creates this product's order. -->
+        <!-- value=@product.id. this way it will be accessible in the parameters and you can access the product in the payments controller. button creates a new order for product. -->
         <%= hidden_field_tag(:product_id, @product.id) %>
       <% end %>
 

@@ -8,7 +8,8 @@
             <h4><%= comment.user.first_name %> <small><em>
             <%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
             <!--show destroy link only if used is admin and signed in-->
-            <% if signed_in? && current_user.admin? %>
+            <!-- if current_user is essentially the same thing as if signed_in? as it returns false if no current_user object exists. The object only exists if a user is actually signed in. -->
+            <% if current_user && current_user.admin? %>
               <!--to link to this nested resource in Rails use the full path name.
               Nested resource links require both resources so you need to pass it the product variable and
               the comment variable.
