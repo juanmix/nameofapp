@@ -19,20 +19,22 @@ describe ProductsController, type: :controller do
   context 'POST #create' do
     before do
       @product = FactoryGirl.create(:product)
+      post :create, product: @product
     end
 
     it 'redirects to product show' do
-      expect(response).to redirect_to(product_path)
+      expect(response).to redirect_to(@product)
     end
   end
 
   context 'PATCH #update' do
     before do
       @product = FactoryGirl.create(:product)
+      patch :update, product: @product
     end
 
     it 'redirects to product show' do
-      expect(response).to redirect_to(product_path)
+      expect(response).to redirect_to(@product)
     end
   end
 
