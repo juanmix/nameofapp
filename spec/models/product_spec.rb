@@ -8,8 +8,8 @@ describe Product do
     before do
       # .create! will return an error message to you. '.create' wont.
       # .create! is a combination of .new (to generate a new product) and .save!
-      @product = Product.create!(name: "race bike")
-      @user = FactoryGirl.create(:user)
+      @product = FactoryGirl.create(:product)
+      @user = FactoryGirl.build(:user)
       # comments needs to be plural because you set up your Product model to have many comments.
       @product.comments.create!(rating: 1, user: @user, body: "ugly bike!")
       @product.comments.create!(rating: 3, user: @user, body: "its allright!")
